@@ -1,13 +1,16 @@
 <main>
   <section class="form-section">
-    <div class="header">
-      <img src="/assets/images/logo.svg" alt="" />
-      <h2>MoveIt!</h2>
-    </div>
+    <img src="/assets/images/logo.svg" alt="" />
     <h2>{{ login }}</h2>
-    <button>Login Now</button>
-    <div><span>OR</span></div>
-    <button>Signup Now</button>
+    <div class="btn-wrapper">
+      <button class="login">{{ primaryBtnText }}</button>
+      <div class="divider">
+        <div class=""></div>
+        <span>OR</span>
+        <div class=""></div>
+      </div>
+      <button class="signup">{{ secondaryBtnText }}</button>
+    </div>
   </section>
   <section class="main-section">
     <h1>You should move it!</h1>
