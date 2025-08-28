@@ -30,6 +30,8 @@ main {
 
     img {
       margin-bottom: 30px;
+      pointer-events: none;
+      user-select: none;
     }
 
     h2 {
