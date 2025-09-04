@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-// import logo from '../../../assets/images/logo.svg';
 
 @Component({
   selector: 'app-default-login-layout',

@@ -1,0 +1,40 @@
+<app-default-signup-layout
+  signup="Sign in and start today"
+  primaryBtnText="Sign up"
+  secondaryBtnText="Login Now"
+>
+  <form [formGroup]="signUpForm">
+    <app-secondary-input
+      formControlName="name"
+      inputName="name"
+      type="text"
+      label="Name"
+      placeholder="John Doe"
+    >
+      <img src="/assets/icons/email-icon.svg" />
+    </app-secondary-input>
+    <app-secondary-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeholder="alex@email.com"
+    >
+    </app-secondary-input>
+    <app-secondary-input
+      formControlName="password"
+      inputName="password"
+      type="password"
+      label="Password"
+      placeholder="Enter your password"
+    >
+    </app-secondary-input>
+    <app-secondary-input
+      formControlName="confirmPassword"
+      inputName="confirmPassword"
+      type="password"
+      label="Confirm Password"
+      placeholder="Repeat your password"
+    ></app-secondary-input>
+  </form>
+</app-default-signup-layout>
