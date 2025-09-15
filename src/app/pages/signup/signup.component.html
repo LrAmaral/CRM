@@ -2,6 +2,8 @@
   signup="Sign in and start today"
   primaryBtnText="Sign up"
   secondaryBtnText="Login Now"
+  (submit)="submit()"
+  (navigate)="navigate()"
 >
   <form [formGroup]="signUpForm">
     <app-secondary-input
