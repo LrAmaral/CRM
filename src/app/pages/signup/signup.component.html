@@ -1,46 +1,45 @@
-<app-default-signup-layout
-  signup="Sign in and start today"
-  primaryBtnText="Sign up"
-  secondaryBtnText="Login Now"
-  (submit)="submit()"
-  (navigate)="navigate()"
+<app-default-login-layout
+    title="Sign in and start today!t"
+    primaryBtnText="Signup Now"
+    secondaryBtnText="Login Now"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!signupForm.valid"
 >
-  <form [formGroup]="signUpForm">
-    <app-secondary-input
-      formControlName="name"
-      inputName="name"
-      type="text"
-      label="Name"
-      placeholder="John Doe"
+    <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="name"
+            inputName="name"
+            type="text"
+            label="Your name"
+            placeholder="John Doe"
+        >
+            <img src="/assets/icons/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+        >
+            <img src="/assets/icons/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Your Password"
+        >
+        <img src="/assets/icons/password-icon.svg"/>
+    </app-primary-input>
+    <app-primary-input
+        formControlName="passwordConfirm"
+        inputName="passwordConfirm"
+        type="password"
+        label="Confirm your Password"
     >
-      <img src="/assets/icons/email-icon.svg" />
-    </app-secondary-input>
-    <app-secondary-input
-      formControlName="email"
-      inputName="email"
-      type="email"
-      label="Email"
-      placeholder="alex@email.com"
-    >
-      <img src="/assets/icons/email-icon.svg" />
-    </app-secondary-input>
-    <app-secondary-input
-      formControlName="password"
-      inputName="password"
-      type="password"
-      label="Password"
-      placeholder="Enter your password"
-    >
-      <img src="/assets/icons/password-icon.svg" />
-    </app-secondary-input>
-    <app-secondary-input
-      formControlName="confirmPassword"
-      inputName="confirmPassword"
-      type="password"
-      label="Confirm Password"
-      placeholder="Repeat your password"
-    >
-      <img src="/assets/icons/password-icon.svg" />
-    </app-secondary-input>
-  </form>
-</app-default-signup-layout>
+        <img src="/assets/icons/password-icon.svg"/>
+    </app-primary-input>
+    </form>
+</app-default-login-layout>
