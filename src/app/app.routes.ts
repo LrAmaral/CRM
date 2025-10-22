@@ -4,6 +4,7 @@ import { SignUpComponent } from './pages/signup/signup.component';
 import { UserComponent } from './pages/user/user.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   {
@@ -26,12 +27,12 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivateChild: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     children: [
-      // {
-      //   path: '',
-      //   component: '',
-      // },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
     ]
   },
   {

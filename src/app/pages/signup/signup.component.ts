@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import {
   FormControl,
@@ -32,7 +32,7 @@ interface SignupForm {
 })
 export class SignUpComponent {
   signupForm!: FormGroup<SignupForm>;
-
+  loginErrorMessage = '';
   constructor(
     private router: Router,
     private loginService: LoginService,
@@ -52,6 +52,8 @@ export class SignUpComponent {
     });
   }
 
+  private readonly _router = inject(Router)
+
   submit() {
     this.loginService
       .signup(
@@ -60,9 +62,16 @@ export class SignUpComponent {
         this.signupForm.value.password
       )
       .subscribe({
-        next: () => this.toastService.success('Login succesfull!'),
-        error: () =>
-          this.toastService.error('Unexpected error, try again later'),
+        next: () => {
+          this.loginErrorMessage = '';
+          this.toastService.success('Login succesfull!')
+          this._router.navigate(['/home']);
+        },
+        error: (error) => {
+          this.toastService.error('Unexpected error, try again later');
+          console.log(error);
+          this.loginErrorMessage = error.error.message;
+        },
       });
   }
 

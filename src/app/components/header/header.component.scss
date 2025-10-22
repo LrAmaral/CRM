@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+  margin-left: 72px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  flex: 1;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
