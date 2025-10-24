@@ -22,6 +22,21 @@ main {
     flex-grow: 1;
 
     background-color: $background;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      width: 100%;
+      gap: 8px;
+      padding: 24px;
+
+      p {
+        width: 400px;
+        font-weight: 500;
+      }
+    }
   }
 
   .form-section {

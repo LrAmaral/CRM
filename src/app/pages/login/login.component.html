@@ -1,7 +1,7 @@
 <app-default-login-layout
-  login="Login into your account"
-  primaryBtnText="Login Now"
-  secondaryBtnText="Signup Now"
+  login="Acesse sua conta"
+  primaryBtnText="Acessar"
+  secondaryBtnText="Criar conta"
   (submit)="submit()"
   (navigate)="navigate()"
   [disablePrimaryBtn]="!loginForm.valid"
@@ -21,7 +21,7 @@
       formControlName="password"
       inputName="password"
       type="password"
-      label="Password"
+      label="Senha"
       placeholder="**********"
     >
       <img src="/assets/icons/password-icon.svg" />
