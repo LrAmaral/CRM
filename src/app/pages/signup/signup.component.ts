@@ -64,11 +64,11 @@ export class SignUpComponent {
       .subscribe({
         next: () => {
           this.loginErrorMessage = '';
-          this.toastService.success('Login succesfull!')
+          this.toastService.success('Login feito com sucesso!')
           this._router.navigate(['/home']);
         },
         error: (error) => {
-          this.toastService.error('Unexpected error, try again later');
+          this.toastService.error('Erro inesperado, tente novamente mais tarde');
           console.log(error);
           this.loginErrorMessage = error.error.message;
         },
