@@ -22,6 +22,21 @@ main {
     flex-grow: 1;
 
     background-color: $background;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      width: 100%;
+      gap: 8px;
+      padding: 24px;
+
+      p {
+        width: 400px;
+        font-weight: 500;
+      }
+    }
   }
 
   .form-section {
@@ -89,6 +104,29 @@ main {
         &:disabled {
           opacity: 0.8;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1228px) {
+  main {
+    flex-direction: column;
+
+    section {
+      width: 100%;
+      height: 100dvh;
+    }
+
+    .main-section {
+      display: none;
+    }
+
+    .form-section {
+      width: 60dvw;
+
+      @media (max-width: 768px){
+        width: 100dvw;
       }
     }
   }

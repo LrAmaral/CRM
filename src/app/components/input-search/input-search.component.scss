@@ -1,0 +1,22 @@
+.search {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+}
+
+.input {
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  width: 300px;
+  border-radius: 8px;
+}

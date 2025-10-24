@@ -1,45 +1,45 @@
 <app-default-login-layout
-    login="Sign in and start today!"
-    primaryBtnText="Signup Now"
-    secondaryBtnText="Login Now"
-    (submit)="submit()"
-    (navigate)="navigate()"
-    [disablePrimaryBtn]="!signupForm.valid"
+  login="Crie sua conta e acesse!"
+  primaryBtnText="Criar conta"
+  secondaryBtnText="Acessar conta"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [disablePrimaryBtn]="!signupForm.valid"
 >
-    <form [formGroup]="signupForm">
-        <app-primary-input
-            formControlName="name"
-            inputName="name"
-            type="text"
-            label="Your name"
-            placeholder="John Doe"
-        >
-            <img src="/assets/icons/email-icon.svg"/>
-        </app-primary-input>
-        <app-primary-input
-            formControlName="email"
-            inputName="email"
-            type="email"
-            label="Email"
-            placeholder="johndoe@gmail.com"
-        >
-            <img src="/assets/icons/email-icon.svg"/>
-        </app-primary-input>
-        <app-primary-input
-            formControlName="password"
-            inputName="password"
-            type="password"
-            label="Your Password"
-        >
-        <img src="/assets/icons/password-icon.svg"/>
+  <form [formGroup]="signupForm">
+    <app-primary-input
+      formControlName="name"
+      inputName="name"
+      type="text"
+      label="Nome"
+      placeholder="John Doe"
+    >
+      <img src="/assets/icons/email-icon.svg" />
     </app-primary-input>
     <app-primary-input
-        formControlName="passwordConfirm"
-        inputName="passwordConfirm"
-        type="password"
-        label="Confirm your Password"
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeholder="johndoe@gmail.com"
     >
-        <img src="/assets/icons/password-icon.svg"/>
+      <img src="/assets/icons/email-icon.svg" />
     </app-primary-input>
-    </form>
+    <app-primary-input
+      formControlName="password"
+      inputName="password"
+      type="password"
+      label="Sua senha"
+    >
+      <img src="/assets/icons/password-icon.svg" />
+    </app-primary-input>
+    <app-primary-input
+      formControlName="passwordConfirm"
+      inputName="passwordConfirm"
+      type="password"
+      label="Confirme sua senha"
+    >
+      <img src="/assets/icons/password-icon.svg" />
+    </app-primary-input>
+  </form>
 </app-default-login-layout>
