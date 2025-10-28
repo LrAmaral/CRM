@@ -22,7 +22,7 @@ export const routes: Routes = [
   {
     path: 'user',
     component: UserComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: '',
