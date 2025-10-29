@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import {
   FormControl,
@@ -10,6 +10,7 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { MatIconModule } from '@angular/material/icon';
 
 interface LoginForm {
   email: FormControl;
@@ -23,6 +24,7 @@ interface LoginForm {
     DefaultLoginLayoutComponent,
     ReactiveFormsModule,
     PrimaryInputComponent,
+    MatIconModule,
   ],
   providers: [LoginService],
   templateUrl: './login.component.html',
@@ -30,6 +32,7 @@ interface LoginForm {
 })
 export class LoginComponent {
   loginForm!: FormGroup<LoginForm>;
+  showPassword: boolean = false;
 
   constructor(
     private router: Router,
@@ -51,11 +54,17 @@ export class LoginComponent {
       .subscribe({
         next: () => this.toastService.success('Login feito com sucesso!'),
         error: () =>
-          this.toastService.error('Erro inesperado, tente novamente mais tarde'),
+          this.toastService.error(
+            'Erro inesperado, tente novamente mais tarde'
+          ),
       });
   }
 
   navigate() {
     this.router.navigate(['signup']);
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }
