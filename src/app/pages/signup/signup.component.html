@@ -36,9 +36,15 @@
     <app-primary-input
       formControlName="passwordConfirm"
       inputName="passwordConfirm"
-      type="password"
+      [type]="showPassword ? 'text' : 'password'"
       label="Confirme sua senha"
+      class="password"
     >
+      <button (click)="togglePassword()" type="button">
+        <mat-icon>{{
+          showPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
       <img src="/assets/icons/password-icon.svg" />
     </app-primary-input>
   </form>
