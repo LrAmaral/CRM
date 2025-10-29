@@ -10,6 +10,7 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { MatIconModule } from '@angular/material/icon';
 
 interface SignupForm {
   name: FormControl;
@@ -25,6 +26,7 @@ interface SignupForm {
     DefaultLoginLayoutComponent,
     ReactiveFormsModule,
     PrimaryInputComponent,
+    MatIconModule,
   ],
   providers: [LoginService],
   templateUrl: './signup.component.html',
@@ -32,7 +34,9 @@ interface SignupForm {
 })
 export class SignUpComponent {
   signupForm!: FormGroup<SignupForm>;
-  loginErrorMessage = '';
+  loginErrorMessage: string = '';
+  showPassword: boolean = false;
+  
   constructor(
     private router: Router,
     private loginService: LoginService,
@@ -52,7 +56,7 @@ export class SignUpComponent {
     });
   }
 
-  private readonly _router = inject(Router)
+  private readonly _router = inject(Router);
 
   submit() {
     this.loginService
@@ -64,11 +68,13 @@ export class SignUpComponent {
       .subscribe({
         next: () => {
           this.loginErrorMessage = '';
-          this.toastService.success('Login feito com sucesso!')
+          this.toastService.success('Login feito com sucesso!');
           this._router.navigate(['/home']);
         },
         error: (error) => {
-          this.toastService.error('Erro inesperado, tente novamente mais tarde');
+          this.toastService.error(
+            'Erro inesperado, tente novamente mais tarde'
+          );
           console.log(error);
           this.loginErrorMessage = error.error.message;
         },
@@ -77,5 +83,9 @@ export class SignUpComponent {
 
   navigate() {
     this.router.navigate(['login']);
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 }
